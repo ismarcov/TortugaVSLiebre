@@ -1,0 +1,50 @@
+﻿@model IEnumerable<TortugaLiebre.Models.Clasificatorias>
+
+@{
+    ViewData["Title"] = "Clasificatorias";
+}
+
+<h1>Tabla de Clasificatorias</h1>
+
+<table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NumCarrera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ganador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaCarrera)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apostadores)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ganancias)
+            </th>            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumCarrera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ganador)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaCarrera)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apostadores)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ganancias)
+            </td>            
+        </tr>
+}
+    </tbody>
+</table>

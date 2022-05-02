@@ -1,0 +1,62 @@
+﻿@{
+    ViewData["Title"] = "Principal";
+}
+
+<div class="text-center">
+    <h1 class="display-3">Liebre VS Tortuga</h1>
+    <br />
+    <div class="container" style="width:max-content;">
+        <p class="h2" id="msgAdvice">
+            Escoge tu participante:
+        </p>
+        <br />
+        <div class="container d-block" id="compGroup">
+            <label>
+                <input type="radio" name="demo" class="card-input-element d-none" id="liebreOpt" value="Liebre">
+                <div class="card card-body bg-secondary d-flex flex-row justify-content-between align-items-center m-2">
+                    <img src="~/images/rabbit.png" width="64px" alt="rabbit" />
+                    <br />
+                    <p class="h5 text-light">Liebre</p>
+                </div>
+            </label>
+            <label>
+                <input type="radio" name="demo" class="card-input-element d-none" id="tortugaOpt" value="Tortuga">
+                <div class="card card-body bg-success d-flex flex-row justify-content-between align-items-center m-2">
+                    <img src="~/images/turtle.png" width="64px" alt="turtle" />
+                    <br />
+                    <p class="h5 text-light">Tortuga</p>
+                </div>
+            </label>
+        </div>        
+    </div>
+
+    <div class="container" id="apuestaContainer" style="width:max-content;">
+        <form id="carreraForm" class="d-flex flex-column justify-content-center align-content-center align-items-center">
+            <div class="input-group mb-3 d-none" id="apuestaDiv">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                </div>
+                <input type="number" max="100" min="1" class="form-control" aria-label="Cantidad de apuesta" id="apuesta">
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary w-50 d-none" id="jugarBtn" onclick="jugar()">Jugar</button>
+        </form>
+    </div>    
+</div>
+<div class="w-100 d-none" id="pista">
+    <p class="h4">Liebre</p>
+    <div class="w-100">
+        <img src="~/images/rabbit.png" style="width:42px;position:relative;left:0%;" alt="rabbitAlt" id="rabbitImg" />
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-secondary" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" style="width: 0%" id="liebreProgress"></div>
+        </div>
+    </div>
+    <br />
+    <p class="h4">Tortuga</p>
+    <div class="w-100">
+        <img src="~/images/turtle.png" style="width:42px;position:relative;left:0%;transform:scaleX(-1)" alt="turtleAlt" id="turtleImg" />
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="10" style="width: 0%" id="tortugaProgress"></div>
+        </div>
+    </div>
+</div>
